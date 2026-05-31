@@ -17,13 +17,12 @@ const features = [
   }
 ];
 ---
-<section id="keunggulan" class="py-32 bg-white relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 border-t border-gray-100 pt-16">
-      {features.map((feature, index) => (
-        <div class="bg-white p-6 group relative opacity-0 animate-fade-in-up" style={`animation-delay: ${0.3 + (index * 0.2)}s;`}>
-          <!-- Minimalist Icon -->
-          <div class="w-12 h-12 bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 rounded-lg">
+<section id="keunggulan" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {features.map((feature) => (
+        <div class="bg-white p-8 border border-gray-100 hover:border-gray-300 transition-colors duration-300 group">
+          <div class="w-12 h-12 bg-black flex items-center justify-center mb-6">
             <Fragment set:html={feature.icon} />
           </div>
           

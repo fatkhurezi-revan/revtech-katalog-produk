@@ -1,78 +1,28 @@
 ---
-const bgImagesRow1 = [
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400", 
-  "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=400",
-];
-
-const bgImagesRow2 = [
-  "https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1593998066526-65fcab3021a2?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?auto=format&fit=crop&q=80&w=400", 
-  "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1593998066526-65fcab3021a2?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=400",
-];
 ---
-<section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white min-h-[90vh] flex items-center">
-  <!-- Minimalist Scrolling Image Background with very low opacity -->
-  <div class="absolute inset-0 z-0 overflow-hidden opacity-[0.02] transform -skew-y-6 scale-110 grayscale">
-    <div class="absolute inset-0 flex flex-col justify-center gap-4 h-full">
-      <div class="flex w-[200%] animate-marquee">
-        {bgImagesRow1.map(img => (
-          <div class="w-64 h-64 flex-shrink-0 mx-2 rounded-2xl overflow-hidden bg-black">
-            <img src={img} alt="Background Product" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-        ))}
-      </div>
-      <div class="flex w-[200%] animate-marquee-reverse -ml-24">
-        {bgImagesRow2.map(img => (
-          <div class="w-64 h-64 flex-shrink-0 mx-2 rounded-2xl overflow-hidden bg-black">
-            <img src={img} alt="Background Product" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  <div class="absolute inset-0 z-0 bg-gradient-to-t from-white via-white/95 to-white/80"></div>
-
-  <!-- Hero Content -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-    <div class="opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
-      <span class="inline-block py-1.5 px-4 rounded-full bg-gray-50 text-black text-sm font-bold mb-6 border border-gray-200 shadow-sm animate-pulse-slow">
-        Katalog Produk Minimalis
-      </span>
-    </div>
+<section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-white min-h-[80vh] flex items-center border-b border-gray-100">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <span class="inline-block py-1.5 px-4 rounded-full bg-gray-50 text-black text-sm font-bold mb-6 border border-gray-200">
+      Katalog Produk Eksklusif
+    </span>
     
-    <h1 class="text-6xl md:text-8xl font-extrabold text-black tracking-tighter mb-8 opacity-0 animate-fade-in-up leading-[1.1]" style="animation-delay: 0.3s;">
+    <h1 class="text-5xl md:text-7xl font-extrabold text-black tracking-tight mb-8 leading-tight">
       Pamerkan Produk <br class="hidden sm:block" />
       <span class="text-gray-400">Lebih Elegan.</span>
     </h1>
     
-    <p class="mt-4 text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up font-medium" style="animation-delay: 0.5s;">
-      Fokuskan perhatian pelanggan langsung pada produk Anda. Desain bersih, lapang, tanpa gangguan visual.
+    <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+      Fokuskan perhatian pelanggan langsung pada produk Anda. Desain bersih, lapang, dan langsung pada intinya.
     </p>
     
-    <div class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.7s;">
-      <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="px-10 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-900 hover:shadow-2xl hover:shadow-black/20 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group">
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="px-10 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-800 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group">
         Pesan Sekarang 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:translate-x-1.5 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
       </a>
-      <a href="#katalog" class="px-10 py-4 bg-white text-black border-2 border-gray-200 rounded-full font-bold text-lg hover:border-black transition-colors">
+      <a href="#katalog" class="px-10 py-4 bg-white text-black border-2 border-gray-200 rounded-full font-bold text-lg hover:border-black transition-colors duration-200">
         Eksplorasi
       </a>
     </div>
