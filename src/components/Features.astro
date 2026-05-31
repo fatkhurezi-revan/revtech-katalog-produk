@@ -33,9 +33,13 @@ const features = [
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       {features.map((feature, index) => (
-        <div class="bg-white rounded-3xl p-10 shadow-sm hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 border border-gray-100 group relative opacity-0 animate-fade-in-up transform hover:-translate-y-4" style={`animation-delay: ${0.3 + (index * 0.2)}s;`}>
+        <div class="bg-white rounded-3xl p-10 shadow-sm hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 border border-gray-100 group relative opacity-0 animate-fade-in-up transform hover:-translate-y-4 overflow-hidden" style={`animation-delay: ${0.3 + (index * 0.2)}s;`}>
+          <!-- Sweeping Shimmer on hover -->
+          <div class="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/60 to-transparent group-hover:animate-[shimmer_1.2s_ease-in-out_infinite] z-20 pointer-events-none transform skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
           <!-- Hover Gradient Background -->
-          <div class="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+
           
           <!-- Icon Container -->
           <div class={`w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-8 shadow-lg shadow-gray-200 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>

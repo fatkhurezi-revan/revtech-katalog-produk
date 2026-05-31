@@ -10,11 +10,22 @@
         <span class="text-xs font-medium text-gray-500 uppercase tracking-wider mt-0.5">Template Katalog Produk</span>
       </div>
       <div class="hidden md:flex space-x-8 items-center">
-        <a href="#hero" class="text-gray-700 hover:text-primary font-medium transition-colors">Beranda</a>
-        <a href="#katalog" class="text-gray-700 hover:text-primary font-medium transition-colors">Katalog Produk</a>
-        <a href="#keunggulan" class="text-gray-700 hover:text-primary font-medium transition-colors">Keunggulan</a>
-        <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:shadow-lg hover:-translate-y-0.5">
-          Pesan Sekarang
+        <a href="#hero" class="text-gray-700 hover:text-primary font-medium transition-colors relative group py-2">
+          Beranda
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#katalog" class="text-gray-700 hover:text-primary font-medium transition-colors relative group py-2">
+          Katalog Produk
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#keunggulan" class="text-gray-700 hover:text-primary font-medium transition-colors relative group py-2">
+          Keunggulan
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden bg-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 group">
+          <span class="relative z-10">Pesan Sekarang</span>
+          <!-- Shine effect on hover -->
+          <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-[shimmer_1.5s_infinite] z-0 pointer-events-none transform skew-x-12"></div>
         </a>
       </div>
     </div>
