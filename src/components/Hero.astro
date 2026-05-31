@@ -1,17 +1,63 @@
 ---
+const bgImagesRow1 = [
+  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400", // Duplicated for seamless loop
+  "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=400",
+];
+
+const bgImagesRow2 = [
+  "https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1593998066526-65fcab3021a2?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?auto=format&fit=crop&q=80&w=400", // Duplicated for seamless loop
+  "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1593998066526-65fcab3021a2?auto=format&fit=crop&q=80&w=400",
+  "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=400",
+];
 ---
-<section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-orange-50 opacity-90"></div>
-    <!-- Decorative blobs with animation -->
-    <div class="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
-    <div class="absolute top-40 right-10 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob" style="animation-delay: 2s;"></div>
-    <div class="absolute -bottom-8 left-40 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob" style="animation-delay: 4s;"></div>
+<section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gray-50 min-h-[90vh] flex items-center">
+  <!-- Scrolling Image Background -->
+  <div class="absolute inset-0 z-0 overflow-hidden opacity-30 transform -skew-y-6 scale-110">
+    <div class="absolute inset-0 flex flex-col justify-center gap-4 h-full">
+      
+      <!-- Row 1 (Marquee Left) -->
+      <div class="flex w-[200%] animate-marquee">
+        {bgImagesRow1.map(img => (
+          <div class="w-64 h-64 flex-shrink-0 mx-2 rounded-2xl overflow-hidden bg-gray-200">
+            <img src={img} alt="Background Product" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        ))}
+      </div>
+      
+      <!-- Row 2 (Marquee Right) -->
+      <div class="flex w-[200%] animate-marquee-reverse -ml-24">
+        {bgImagesRow2.map(img => (
+          <div class="w-64 h-64 flex-shrink-0 mx-2 rounded-2xl overflow-hidden bg-gray-200">
+            <img src={img} alt="Background Product" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        ))}
+      </div>
+      
+    </div>
   </div>
 
+  <!-- Overlay to make text readable -->
+  <div class="absolute inset-0 z-0 bg-gradient-to-t from-white via-white/85 to-white/70"></div>
+
+  <!-- Hero Content -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
     <div class="opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
-      <span class="inline-block py-1.5 px-4 rounded-full bg-white/80 backdrop-blur-sm text-primary text-sm font-bold mb-6 border border-blue-200 shadow-sm animate-pulse-slow">
+      <span class="inline-block py-1.5 px-4 rounded-full bg-white/90 text-primary text-sm font-bold mb-6 border border-blue-100 shadow-sm animate-pulse-slow backdrop-blur-sm">
         ✨ Katalog Produk Premium
       </span>
     </div>
@@ -25,12 +71,12 @@
       </span>
     </h1>
     
-    <p class="mt-4 text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up" style="animation-delay: 0.5s;">
+    <p class="mt-4 text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up font-medium drop-shadow-sm" style="animation-delay: 0.5s;">
       Tingkatkan penjualan Anda dengan etalase online yang profesional, cepat, dan dioptimalkan untuk menarik pelanggan langsung ke WhatsApp.
     </p>
     
     <div class="flex flex-col sm:flex-row justify-center gap-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.7s;">
-      <a href="#katalog" class="px-8 py-4 bg-white/80 backdrop-blur-sm text-dark border-2 border-gray-100 rounded-full font-bold text-lg hover:bg-gray-50 hover:border-gray-200 hover:shadow-lg transition-all transform hover:-translate-y-1">
+      <a href="#katalog" class="px-8 py-4 bg-white/90 backdrop-blur-md text-dark border-2 border-gray-100 rounded-full font-bold text-lg hover:bg-gray-50 hover:border-blue-200 hover:shadow-lg transition-all transform hover:-translate-y-1">
         Lihat Koleksi
       </a>
       <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-gradient-to-r from-primary to-blue-600 text-white rounded-full font-bold text-lg hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group animate-float">
