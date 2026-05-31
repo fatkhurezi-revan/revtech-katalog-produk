@@ -10,7 +10,7 @@ export default {
         light: '#f8fafc',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
       },
       animation: {
         'blob': 'blob 7s infinite',
