@@ -5,7 +5,7 @@ const bgImagesRow1 = [
   "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400", // Duplicated for seamless loop
+  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400", 
   "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=400",
@@ -18,72 +18,62 @@ const bgImagesRow2 = [
   "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1593998066526-65fcab3021a2?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?auto=format&fit=crop&q=80&w=400", // Duplicated for seamless loop
+  "https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?auto=format&fit=crop&q=80&w=400", 
   "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1593998066526-65fcab3021a2?auto=format&fit=crop&q=80&w=400",
   "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=400",
 ];
 ---
-<section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gray-50 min-h-[90vh] flex items-center">
-  <!-- Scrolling Image Background -->
-  <div class="absolute inset-0 z-0 overflow-hidden opacity-30 transform -skew-y-6 scale-110">
+<section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white min-h-[90vh] flex items-center">
+  <!-- Minimalist Scrolling Image Background with very low opacity -->
+  <div class="absolute inset-0 z-0 overflow-hidden opacity-[0.02] transform -skew-y-6 scale-110 grayscale">
     <div class="absolute inset-0 flex flex-col justify-center gap-4 h-full">
-      
-      <!-- Row 1 (Marquee Left) -->
       <div class="flex w-[200%] animate-marquee">
         {bgImagesRow1.map(img => (
-          <div class="w-64 h-64 flex-shrink-0 mx-2 rounded-2xl overflow-hidden bg-gray-200">
+          <div class="w-64 h-64 flex-shrink-0 mx-2 rounded-2xl overflow-hidden bg-black">
             <img src={img} alt="Background Product" class="w-full h-full object-cover" loading="lazy" />
           </div>
         ))}
       </div>
-      
-      <!-- Row 2 (Marquee Right) -->
       <div class="flex w-[200%] animate-marquee-reverse -ml-24">
         {bgImagesRow2.map(img => (
-          <div class="w-64 h-64 flex-shrink-0 mx-2 rounded-2xl overflow-hidden bg-gray-200">
+          <div class="w-64 h-64 flex-shrink-0 mx-2 rounded-2xl overflow-hidden bg-black">
             <img src={img} alt="Background Product" class="w-full h-full object-cover" loading="lazy" />
           </div>
         ))}
       </div>
-      
     </div>
   </div>
 
-  <!-- Overlay to make text readable -->
-  <div class="absolute inset-0 z-0 bg-gradient-to-t from-white via-white/85 to-white/70"></div>
+  <div class="absolute inset-0 z-0 bg-gradient-to-t from-white via-white/95 to-white/80"></div>
 
   <!-- Hero Content -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
     <div class="opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
-      <span class="inline-block py-1.5 px-4 rounded-full bg-white/90 text-primary text-sm font-bold mb-6 border border-blue-100 shadow-sm animate-pulse-slow backdrop-blur-sm">
-        ✨ Katalog Produk Premium
+      <span class="inline-block py-1.5 px-4 rounded-full bg-gray-50 text-black text-sm font-bold mb-6 border border-gray-200 shadow-sm animate-pulse-slow">
+        Katalog Produk Minimalis
       </span>
     </div>
     
-    <h1 class="text-5xl md:text-7xl font-extrabold text-dark tracking-tight mb-8 opacity-0 animate-fade-in-up leading-tight" style="animation-delay: 0.3s;">
-      Pamerkan Produk Anda <br class="hidden sm:block" />
-      <span class="relative inline-block mt-2">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-500 to-secondary animate-shimmer" style="background-size: 200% auto;">
-          Dengan Lebih Elegan
-        </span>
-      </span>
+    <h1 class="text-6xl md:text-8xl font-extrabold text-black tracking-tighter mb-8 opacity-0 animate-fade-in-up leading-[1.1]" style="animation-delay: 0.3s;">
+      Pamerkan Produk <br class="hidden sm:block" />
+      <span class="text-gray-400">Lebih Elegan.</span>
     </h1>
     
-    <p class="mt-4 text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up font-medium drop-shadow-sm" style="animation-delay: 0.5s;">
-      Tingkatkan penjualan Anda dengan etalase online yang profesional, cepat, dan dioptimalkan untuk menarik pelanggan langsung ke WhatsApp.
+    <p class="mt-4 text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up font-medium" style="animation-delay: 0.5s;">
+      Fokuskan perhatian pelanggan langsung pada produk Anda. Desain bersih, lapang, tanpa gangguan visual.
     </p>
     
-    <div class="flex flex-col sm:flex-row justify-center gap-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.7s;">
-      <a href="#katalog" class="px-8 py-4 bg-white/90 backdrop-blur-md text-dark border-2 border-gray-100 rounded-full font-bold text-lg hover:bg-gray-50 hover:border-blue-200 hover:shadow-lg transition-all transform hover:-translate-y-1">
-        Lihat Koleksi
-      </a>
-      <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-gradient-to-r from-primary to-blue-600 text-white rounded-full font-bold text-lg hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group animate-float">
+    <div class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.7s;">
+      <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="px-10 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-gray-900 hover:shadow-2xl hover:shadow-black/20 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group">
         Pesan Sekarang 
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:translate-x-1.5 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
+      </a>
+      <a href="#katalog" class="px-10 py-4 bg-white text-black border-2 border-gray-200 rounded-full font-bold text-lg hover:border-black transition-colors">
+        Eksplorasi
       </a>
     </div>
   </div>

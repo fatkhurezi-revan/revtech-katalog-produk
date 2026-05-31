@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#3b82f6',
-        secondary: '#f97316',
-        dark: '#0f172a',
-        light: '#f8fafc',
+        primary: '#000000',
+        secondary: '#333333',
+        dark: '#0a0a0a',
+        light: '#ffffff',
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
