@@ -24,15 +24,15 @@ const bgImagesRow2 = [
     <div class="absolute inset-0 flex flex-col justify-center gap-2 md:gap-4 h-full">
       <div class="flex gap-2 md:gap-4 min-w-max justify-center -ml-10 md:-ml-20">
         {bgImagesRow1.map(img => (
-          <div class="w-32 h-32 md:w-64 md:h-64 flex-shrink-0 rounded-xl md:rounded-2xl overflow-hidden bg-black">
-            <img src={img} alt="Background" class="w-full h-full object-cover" loading="lazy" />
+          <div class="w-32 h-32 md:w-64 md:h-64 flex-shrink-0 rounded-xl md:rounded-2xl overflow-hidden bg-slate-900">
+            <img src={img} alt="Latar belakang produk" class="w-full h-full object-cover" loading="lazy" />
           </div>
         ))}
       </div>
       <div class="flex gap-2 md:gap-4 min-w-max justify-center -ml-20 md:-ml-40">
         {bgImagesRow2.map(img => (
-          <div class="w-32 h-32 md:w-64 md:h-64 flex-shrink-0 rounded-xl md:rounded-2xl overflow-hidden bg-black">
-            <img src={img} alt="Background" class="w-full h-full object-cover" loading="lazy" />
+          <div class="w-32 h-32 md:w-64 md:h-64 flex-shrink-0 rounded-xl md:rounded-2xl overflow-hidden bg-slate-900">
+            <img src={img} alt="Latar belakang produk" class="w-full h-full object-cover" loading="lazy" />
           </div>
         ))}
       </div>
@@ -43,11 +43,12 @@ const bgImagesRow2 = [
 
   <!-- Hero Content -->
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center mt-8 md:mt-0">
-    <span class="inline-block py-1.5 px-4 rounded-full bg-white text-black text-xs md:text-sm font-bold mb-4 md:mb-6 border border-gray-200 shadow-sm">
+    <span class="inline-block py-1.5 px-4 rounded-full bg-white text-slate-900 text-xs md:text-sm font-bold mb-4 md:mb-6 border border-gray-200">
       Katalog Produk Eksklusif
     </span>
     
-    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-black tracking-tight mb-6 md:mb-8 leading-tight">
+    <!-- HANYA ADA 1 H1 -->
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 md:mb-8 leading-tight">
       Pamerkan Produk <br class="hidden sm:block" />
       <span class="text-gray-400">Lebih Elegan.</span>
     </h1>
@@ -57,13 +58,13 @@ const bgImagesRow2 = [
     </p>
     
     <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-4 sm:px-0">
-      <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 bg-black text-white rounded-full font-bold text-base md:text-lg hover:bg-gray-800 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group shadow-lg">
+      <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20Katalog%20Produk.%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 bg-slate-900 text-white rounded-md font-bold text-base md:text-lg hover:bg-slate-800 transition-colors duration-200 flex items-center justify-center gap-2 group">
         Pesan Sekarang 
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
       </a>
-      <a href="#katalog" class="w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 bg-white text-black border-2 border-gray-200 rounded-full font-bold text-base md:text-lg hover:border-black transition-colors duration-200 shadow-sm">
+      <a href="#katalog" class="w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 bg-white text-slate-900 border border-gray-300 rounded-md font-bold text-base md:text-lg hover:border-slate-400 hover:bg-gray-50 transition-colors duration-200">
         Eksplorasi
       </a>
     </div>
