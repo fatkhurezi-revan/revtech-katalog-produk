@@ -32,26 +32,56 @@
           </a>
         </div>
         
-        <!-- CTA Button (Visible on Mobile) -->
-        <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20(Template%20Katalog%20Produk).%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 md:px-7 md:py-3 rounded-md font-bold text-xs sm:text-sm md:text-base transition-colors duration-200 flex-shrink-0">
-          Pesan <span class="hidden sm:inline">Sekarang</span>
+        <!-- CTA Button (Visible on Desktop) -->
+        <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20(Template%20Katalog%20Produk).%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="hidden md:flex bg-slate-900 hover:bg-slate-800 text-white px-7 py-3 rounded-md font-bold text-base transition-colors duration-200 flex-shrink-0 items-center justify-center">
+          Pesan Sekarang
         </a>
+
+        <!-- Hamburger Button (Visible on Mobile) -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-900 focus:outline-none hover:bg-gray-50 rounded-md transition-colors" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
       
     </div>
   </nav>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full top-20 left-0 z-40">
+    <div class="px-4 pt-4 pb-6 space-y-4 flex flex-col">
+      <a href="#hero" class="mobile-nav-link block text-slate-900 font-bold hover:text-slate-900 transition-colors duration-200 px-2">
+        Beranda
+      </a>
+      <a href="#katalog" class="mobile-nav-link block text-gray-500 font-medium hover:text-slate-900 transition-colors duration-200 px-2">
+        Katalog
+      </a>
+      <a href="#keunggulan" class="mobile-nav-link block text-gray-500 font-medium hover:text-slate-900 transition-colors duration-200 px-2">
+        Keunggulan
+      </a>
+      
+      <div class="pt-2">
+        <a href="https://wa.me/6281290018819?text=Halo%20RevTech,%20saya%20tertarik%20untuk%20memesan%20pembuatan%20website%20Paket%20Hemat%20(Template%20Katalog%20Produk).%20Boleh%20bantu%20panduannya%20untuk%20langkah%20selanjutnya?" target="_blank" rel="noopener noreferrer" class="block w-full bg-slate-900 hover:bg-slate-800 text-white px-5 py-3.5 rounded-md font-bold text-sm transition-colors duration-200 text-center">
+          Pesan Sekarang
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Scrollspy functionality
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // Desktop Nav Links
           navLinks.forEach(link => {
-            // Reset state
             link.classList.remove('text-slate-900', 'font-bold');
             link.classList.add('text-gray-500', 'font-medium');
             const indicator = link.querySelector('.nav-indicator');
@@ -60,7 +90,6 @@
               indicator.classList.add('scale-x-0');
             }
             
-            // Set active state
             if (link.getAttribute('href') === `#${entry.target.id}`) {
               link.classList.remove('text-gray-500', 'font-medium');
               link.classList.add('text-slate-900', 'font-bold');
@@ -70,6 +99,16 @@
               }
             }
           });
+
+          // Mobile Nav Links
+          mobileNavLinks.forEach(link => {
+            link.classList.remove('text-slate-900', 'font-bold');
+            link.classList.add('text-gray-500', 'font-medium');
+            if (link.getAttribute('href') === `#${entry.target.id}`) {
+              link.classList.remove('text-gray-500', 'font-medium');
+              link.classList.add('text-slate-900', 'font-bold');
+            }
+          });
         }
       });
     }, { threshold: 0.3 });
@@ -77,5 +116,23 @@
     sections.forEach(section => {
       observer.observe(section);
     });
+
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    
+    if(btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking a link inside it
+      const allMobileLinks = menu.querySelectorAll('a');
+      allMobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    }
   });
 </script>
